@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PATE and its influence
-tags: [Privacy, Privacy-Preserving Machine Learning, Semi-Supervised Learning]
+tags: [Privacy, Privacy-Preserving Machine Learning, Differential Privacy, Semi-Supervised Learning]
 authors: Baweja, Prabhsimran, Carnegie Mellon University; Imran, Umaymah, Carnegie Mellon University; Naidu, Rakshit, Carnegie Mellon University
 ---
 
