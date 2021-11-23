@@ -32,7 +32,7 @@ Here, $\epsilon \geq 0, \delta \geq 0$. A $\delta = 0$ case corresponds to pure 
 
 The gif below explains the steps involved in PATE, 
 
-![PATE GIF](https://imgur.com/p/6R1MwNk)
+![PATE GIF](https://imgur.com/a/6R1MwNk)
 
 Step 1: Divide the dataset into n disjoint subsets.
 
@@ -62,7 +62,7 @@ Model Architecture: For the MNIST dataset, two convolutional layers with max-poo
 
 Training Mechanism: For each framework (PATE and PATE-G), a teacher ensemble is trained for each dataset. A large number of teachers (`n`) are required to introduce the noise from the Laplacian mechanism while maintaining the accuracy. The dataset is partitioned based on the number of teachers (`n`). As n increases, the data provided to each teacher decreases, leading to a large gap between the number of votes assigned to the highest and the second-highest frequent labels by all the teachers. Larger gaps can be directly associated with the confidence of teachers in assigning labels, and allows large noise levels and stronger privacy guarantees. However, with increasing `n`, the accuracy of each teacher reduces due to the limited amount of data. Figure 1 demonstrates the gaps among the teachers as the number of teachers (`n`) increases.
 
-![PATE Experiment](https://ibb.co/2ywbZ7F)
+![PATE Experiment](https://imgur.com/a/aHhLaE4)
 
 Comparison with previous state-of-the-art classifiers: 
 For MNIST dataset, PATE and PATE-G achieve a differential privacy bound (ε, δ) of (2.04, 10-5) with an accuracy of 98%, as compared to the model by [[Abadi et al., 2016]](#Abadi16) that achieves a loose differential privacy bound (ε, δ) of (8, 10-5) with an accuracy of 97%. 
@@ -81,7 +81,6 @@ There have been several approaches to guarantee privacy differential privacy. [[
 
 The PATE approach is independent of the learning algorithm, which allows the use of a wide range of architecture and training algorithms.  PATE increases the accuracy of the private MNIST model from 97% to 98% alongside improving the privacy bound ε from 8 to 1.9. However, the PATE approach assumes that non-private unlabeled data is available, which might not be the case all the time.
 
-
 [[Jagannathan et al., 2013]](#Jagannathan13) modified the decision tree to include the Laplacian mechanism to support privacy guarantees and show that privacy guarantees do not come from disjoint sets of training data, but the modified decision tree architecture. In contrast, PATE demonstrates that partitioning is essential to the privacy guarantees. 
 
 In recent years, researchers have focused on the fairness aspects of PATE. [[Bagdasaryan et al., 2019]](#Bagdas19) showed that Differential privacy has a disparate impact on model accuracy. That is, if underrepresented groups face a disparity in accuracy in comparison to the majority, the unfairness worsens with the addition of Differential privacy ("Rich get richer, poor get poorer"). To address these concerns, the fairness implications on DP-SGD vs PATE was studied by [[Uniyal et al., 2021]](#Uniyal21). They conduct an ablation study over the number of teachers (`n`) and conclude that there is a sweet spot for the number of teachers and going up or going low might not have a positive or negative impact on the accuracy. They also provide evidence that PATE is much fairer than DP-SGD. A further in-depth investigation carried out by [[Tran et al., 2021]](#Tran21) analyzes fairness in PATE.
@@ -98,7 +97,6 @@ However, the key limitation of PATE is that it is a semi-supervised approach, in
 <a name="Sweeney02">Latanya Sweeney. Weaving technology and policy together to maintain confidentiality. The Journal of Law, Medicine & Ethics, 25(2-3):98–110, 1997. </a>
 
 <a name="Jagannathan13">Geetha Jagannathan, Claire Monteleoni, and Krishnan Pillaipakkamnatt. A semi-supervised learning approach to differential privacy. In 2013 IEEE 13th International Conference on Data Mining Workshops, pp. 841–848. IEEE, 2013.</a>
-
 
 <a name="Erlingsson14">Úlfar Erlingsson, Vasyl Pihur, and Aleksandra Korolova. RAPPOR: Randomized aggregatable privacy-preserving ordinal response. In Proceedings of the 2014 ACM SIGSAC Conference on Computer and Communications Security, pp. 1054–1067. ACM, 2014.</a>
 
