@@ -32,7 +32,7 @@ Here, $\epsilon \geq 0, \delta \geq 0$. A $\delta = 0$ case corresponds to pure 
 
 The gif below explains the steps involved in PATE, 
 
-![PATE GIF](https://imgur.com/a/6R1MwNk)
+![PATE GIF](https://imgur.com/p/6R1MwNk)
 
 Step 1: Divide the dataset into n disjoint subsets.
 
@@ -62,7 +62,7 @@ Model Architecture: For the MNIST dataset, two convolutional layers with max-poo
 
 Training Mechanism: For each framework (PATE and PATE-G), a teacher ensemble is trained for each dataset. A large number of teachers (`n`) are required to introduce the noise from the Laplacian mechanism while maintaining the accuracy. The dataset is partitioned based on the number of teachers (`n`). As n increases, the data provided to each teacher decreases, leading to a large gap between the number of votes assigned to the highest and the second-highest frequent labels by all the teachers. Larger gaps can be directly associated with the confidence of teachers in assigning labels, and allows large noise levels and stronger privacy guarantees. However, with increasing `n`, the accuracy of each teacher reduces due to the limited amount of data. Figure 1 demonstrates the gaps among the teachers as the number of teachers (`n`) increases.
 
-![PATE experiments](https://imgur.com/a/aHhLaE4)
+![PATE experiments](https://imgur.com/p/aHhLaE4)
 
 Comparison with previous state-of-the-art classifiers: 
 For MNIST dataset, PATE and PATE-G achieve a differential privacy bound (ε, δ) of (2.04, 10-5) with an accuracy of 98%, as compared to the model by [[Abadi et al., 2016]](#Abadi16) that achieves a loose differential privacy bound (ε, δ) of (8, 10-5) with an accuracy of 97%. 
